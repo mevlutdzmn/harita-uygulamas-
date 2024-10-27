@@ -1,0 +1,27 @@
+<div id="viewDiv" style="height: 400px;"></div> <!-- Harita alanı -->
+
+<!-- Seçili özelliği göster -->
+<div *ngIf="selectedFeature">
+  <h3>Seçilen Özellik Bilgileri</h3>
+  <p>Tree ID: {{ selectedFeature.OBJECTID }}</p>
+</div>
+
+<!-- Tablo -->
+<table>
+  <thead>
+    <tr>
+      <th>Tree ID</th>
+      <th>Type</th>
+      <th>Height</th>
+      <!-- Diğer başlıklar -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of features">
+      <td>{{ item.OBJECTID }}</td>
+      <td>{{ item.TYPE }}</td>
+      <td>{{ item.HEIGHT }}</td>
+      <!-- Diğer hücreler -->
+    </tr>
+  </tbody>
+</table>
